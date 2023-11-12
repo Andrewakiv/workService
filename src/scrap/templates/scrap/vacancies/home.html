@@ -1,0 +1,36 @@
+{% extends 'scrap/base.html' %}
+
+{% block title %}Home{% endblock%}
+
+{% block content %}
+    {% for vacancy in object_list %}
+        <div class="card my-3">
+          <div class="card-header">
+              <h5><a href="{{ vacancy.url }}">{{ vacancy.title }}</a></h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ vacancy.company }}</h5>
+            <p class="card-text">{{ vacancy.description }}</p>
+            <p>{{ vacancy.city.name }} | {{ vacancy.language.name }} | {{ vacancy.timestamp|date:"d-m-Y" }}</p>
+    <!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
+          </div>
+        </div>
+    {% endfor %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <form method="post">
+          <div class="mb-3">
+            {{ form.as_p }}
+            {% csrf_token %}
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!--<form method="post" action="">-->
+<!--    {{ form.as_p }}-->
+<!--    {% csrf_token %}-->
+<!--    <input type="submit" value="Submit">-->
+<!--</form>-->
+{% endblock %}

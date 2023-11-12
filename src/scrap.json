@@ -1,0 +1,102 @@
+[
+{
+    "model": "scrap.city",
+    "pk": 1,
+    "fields": {
+        "name": "Kyiv",
+        "slug": "Kyiv"
+    }
+},
+{
+    "model": "scrap.city",
+    "pk": 2,
+    "fields": {
+        "name": "Lviv",
+        "slug": "Lviv"
+    }
+},
+{
+    "model": "scrap.city",
+    "pk": 3,
+    "fields": {
+        "name": "Kharkiv",
+        "slug": "Kharkiv"
+    }
+},
+{
+    "model": "scrap.language",
+    "pk": 1,
+    "fields": {
+        "name": "Python",
+        "slug": "Python"
+    }
+},
+{
+    "model": "scrap.language",
+    "pk": 2,
+    "fields": {
+        "name": "Go",
+        "slug": "Go"
+    }
+},
+{
+    "model": "scrap.language",
+    "pk": 3,
+    "fields": {
+        "name": "C#",
+        "slug": "C-sharp"
+    }
+},
+{
+    "model": "scrap.vacancy",
+    "pk": 1,
+    "fields": {
+        "url": "https://djinni.co/jobs/607220-junior-python-developer/",
+        "title": "Junior Python Developer",
+        "company": "Newsoft",
+        "description": "Newsoft is looking for a Python Developer with an understanding of JavaScript to join our team. In addition to external projects, we are actively engaged in the development of our internal systems. We have created our own system that sets a new standard for interaction between employees and management, ensuring clarity and understanding of all company processes. This role includes the responsibility of enhancing the system with innovative solutions, developing new features, and providing support for existing ones.\r\n\r\nRequirements:\r\n▪️ 6+ months of software development experience (commercial experience or own projects).\r\n▪️ Solid knowledge of Python.\r\n▪️ Understanding of RESTful APIs.\r\n▪️ Proficiency in at least one of the Python frameworks (Django, FastAPI, Flask).\r\n▪️ Experience working with relational databases (PostgreSQL, MySQL).\r\n▪️ Experience of working with Git.\r\n▪️ Understanding of SOLID principles.\r\n▪️ Strong knowledge of HTML/CSS.\r\n▪️ Knowledge of TypeScript or JavaScript.\r\n▪️ Understanding of React (experience will be an advantage).\r\n▪️ Upper-intermediate level of English.\r\n\r\nNice-to-Have Skills:\r\n▪️ Familiarity with Docker.\r\n▪️ Experience working with AWS or other cloud service providers.",
+        "city": 1,
+        "language": 1,
+        "timestamp": "2023-11-10"
+    }
+},
+{
+    "model": "scrap.vacancy",
+    "pk": 2,
+    "fields": {
+        "url": "https://djinni.co/jobs/570163-backend-developer-golang-/",
+        "title": "Backend Developer (Golang)",
+        "company": "American Technologies Network",
+        "description": "ATN corporation, the US industry Leader in the Intelligent Sports and Profesional Optics is currently looking for an experienced Backend Developer (Golang) to join our team.\r\n\r\nResponsibilities:\r\n— Developing and maintaining high-performance and scalable web applications using Go language\r\n— Building server-side APIs using Go\r\n— Designing and optimizing databases, including modeling, migrations, and SQL queries\r\n— Participating in the architecture design of applications and making technical decisions\r\n— Testing and debugging software to ensure high-quality deliverables\r\n— Collaborating with other members of team to achieve project goals\r\n\r\nRequirements:\r\n— More than 4 years of experience working as a Backend developer\r\n— More than 2 years of experience working with GO (Golang)\r\n— Strong knowledge of web technologies including HTTP, REST APIs, and databases\r\n— Knowledge of software development concepts such as OOP, MVC, and modularity\r\n— Good knowledge of database as MySQL or MariaDB, MongoDB, Redis\r\n— Ability to write efficient, maintainable, and testable code\r\n— Experience with Docker and containerization of applications\r\n— Proficiency with version control systems like Git\r\n— Willingness to learn new technologies and follow best development practices",
+        "city": 2,
+        "language": 2,
+        "timestamp": "2023-11-10"
+    }
+},
+{
+    "model": "scrap.vacancy",
+    "pk": 3,
+    "fields": {
+        "url": "https://djinni.co/jobs/577783-trainee-c-developer/",
+        "title": "Trainee C# Developer",
+        "company": "Digital Cloud Technologies",
+        "description": "Requirements:\r\n\r\nGood knowledge of C#.\r\nGood understanding of OOP and SOLID.\r\nKnowledge of WPF or UWP.\r\nDesire and ability to learn; target-oriented.\r\n\r\nWill be a plus:\r\n\r\nKnowledge of design patterns.\r\nUnderstanding of SQL basics.\r\nBeing a quick learner and having a desire to improve technical skills.\r\nSoftware development experience (e.g. pet projects).",
+        "city": 3,
+        "language": 3,
+        "timestamp": "2023-11-10"
+    }
+},
+{
+    "model": "scrap.vacancy",
+    "pk": 4,
+    "fields": {
+        "url": "https://djinni.co/jobs/593926-python-developer/",
+        "title": "Python Developer",
+        "company": "OCTY",
+        "description": "Required skills:\r\n- 1+ years experience of Python Development\r\n- OOP, SOLID, Design Patterns, Architectural Patterns\r\n- Proficiency in Python, Django/Flask.\r\n- Database expertise (SQL/NoSQL).\r\n- Problem-solving and teamwork skills.\r\n- English B2 or upper.\r\n\r\nAdditional skills:\r\n\r\n- Cloud platform experience (AWS, Azure, GCP).\r\n- DevOps (CI/CD, Docker, Kubernetes).\r\n- Web security knowledge.\r\n- Agile methodology familiarity",
+        "city": 3,
+        "language": 1,
+        "timestamp": "2023-11-10"
+    }
+}
+]
