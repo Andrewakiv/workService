@@ -3,6 +3,17 @@
 {% block title %}Home{% endblock%}
 
 {% block content %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form method="post" action="">
+              <div class="mb-3">
+                {{ form.as_p }}
+                {% csrf_token %}
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
     {% for vacancy in object_list %}
         <div class="card my-3">
           <div class="card-header">
@@ -16,17 +27,6 @@
           </div>
         </div>
     {% endfor %}
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <form method="post">
-          <div class="mb-3">
-            {{ form.as_p }}
-            {% csrf_token %}
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-</div>
 
 <!--<form method="post" action="">-->
 <!--    {{ form.as_p }}-->
