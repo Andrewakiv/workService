@@ -1,4 +1,9 @@
 from django.db import models
+import jsonfield
+
+
+def default_url():
+    return {'work': '', 'dou': '', 'djinni': ''}
 
 
 class City(models.Model):
@@ -37,6 +42,17 @@ class Vacancy(models.Model):
     class Meta:
         verbose_name = 'Vacancy'
         verbose_name_plural = 'Vacancies'
+        ordering = ['-timestamp']
 
     def __str__(self):
         return self.title
+
+
+class Url(models.Model):
+    city = models.ForeignKey('City', on_delete=models.CASCADE)
+    language = models.ForeignKey('Language', on_delete=models.CASCADE)
+    url = jsonfield.JSONField(default=default_url)
+    
+    class Meta:
+        unique_together = ('city', 'language')
+    

@@ -24,7 +24,7 @@ headers = [
 ]
 
 
-def work(path):
+def work(path, city=None, language=None):
     vacancies = []
     errors = []
     if path:
@@ -42,7 +42,8 @@ def work(path):
                     url = 'https://www.work.ua' + i.h2.a['href']
                     description = ' '.join(i.p.text.split())
                     company = i.find('div', class_='add-top-xs').span.b.text
-                    vacancies.append({'title': title, 'url': url, 'description': description, 'company': company})
+                    vacancies.append({'title': title, 'url': url, 'description': description, 'company': company,
+                                      'city_id': city, 'language_id': language})
             else:
                 errors.append({'url': path, 'title': "Div does not exists"})
         else:
@@ -51,7 +52,7 @@ def work(path):
     return vacancies, errors
 
 
-def dou(path):
+def dou(path, city=None, language=None):
     vacancies = []
     errors = []
     if path:
@@ -69,7 +70,8 @@ def dou(path):
                     url = i.find('div', class_='title').a['href']
                     description = ' '.join(i.find('div', class_='sh-info').text.split())
                     company = i.find('div', class_='title').find('a', class_='company').text.strip()
-                    vacancies.append({'title': title, 'url': url, 'description': description, 'company': company})
+                    vacancies.append({'title': title, 'url': url, 'description': description, 'company': company,
+                                      'city_id': city, 'language_id': language})
             else:
                 errors.append({'url': path, 'title': "Ul does not exists"})
         else:
@@ -78,7 +80,7 @@ def dou(path):
     return vacancies, errors
 
 
-def djinni(path):
+def djinni(path, city=None, language=None):
     vacancies = []
     errors = []
     if path:
@@ -98,7 +100,8 @@ def djinni(path):
                     desc_short = ' '.join(
                         [j.strip() for j in i.find('div', class_="job-list-item__description").text.split('\n') if len(j) > 0])
                     desc_long = i.find('div', class_="job-list-item__description").span['data-original-text']
-                    vacancies.append({'title': title, 'url': url, 'description': desc_short, 'company': company})
+                    vacancies.append({'title': title, 'url': url, 'description': desc_short, 'company': company,
+                                      'city_id': city, 'language_id': language})
             else:
                 errors.append({'url': path, 'title': "Ul does not exists"})
         else:
