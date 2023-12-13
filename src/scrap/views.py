@@ -1,9 +1,20 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Vacancy
 from .forms import FindForm
 
 
 def home_view(request):
+    form = FindForm()
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'scrap/vacancies/home.html', context=context)
+
+
+def list_view(request):
     vacancies = Vacancy.objects.all()
 
     if request.method == 'GET':
@@ -23,9 +34,13 @@ def home_view(request):
     else:
         form = FindForm()
 
+    paginator = Paginator(vacancies, 10)
+    page_number = request.GET.get('page', 1)
+    vacancies = paginator.page(page_number)
+
     context = {
         'object_list': vacancies,
         'form': form
     }
 
-    return render(request, 'scrap/vacancies/home.html', context=context)
+    return render(request, 'scrap/vacancies/list.html', context=context)
