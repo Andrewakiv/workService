@@ -4,17 +4,44 @@
 
 {% block content %}
     {% for vacancy in object_list %}
-    <div class="card my-3">
-        <div class="card-header">
-            <h5><a href="{{ vacancy.url }}">{{ vacancy.title }}</a></h5>
+        <div class="card my-3">
+            <div class="card-header">
+                <h5><a href="{{ vacancy.url }}">{{ vacancy.title }}</a></h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ vacancy.company }}</h5>
+                <p class="card-text">{{ vacancy.description }}</p>
+                <p>{{ vacancy.city.name }} | {{ vacancy.language.name }} | {{ vacancy.timestamp|date:"d-m-Y" }}</p>
+                <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">{{ vacancy.company }}</h5>
-            <p class="card-text">{{ vacancy.description }}</p>
-            <p>{{ vacancy.city.name }} | {{ vacancy.language.name }} | {{ vacancy.timestamp|date:"d-m-Y" }}</p>
-            <!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
-        </div>
-    </div>
     {% endfor %}
-    {% include "scrap/vacancies/pagination.html" with page_obj=object_list %}
+    <div class="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    {% if object_list.has_previous %}
+                        <a class="page-link" href="?city={{form.cleaned_data.city}}&language={{form.cleaned_data.language}}&page={{ object_list.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    {% endif %}
+                </li>
+                {% for page in object_list.paginator.page_range %}
+                    <li class="page-item
+                        {% if page == object_list.number %}
+                            active
+                        {% endif %}">
+                            <a class="page-link" href="?city={{form.cleaned_data.city}}&language={{form.cleaned_data.language}}&page={{ page }}">{{ page }}</a>
+                    </li>
+                {% endfor %}
+                <li class="page-item">
+                    {% if object_list.has_next %}
+                        <a class="page-link" href="?city={{form.cleaned_data.city}}&language={{form.cleaned_data.language}}&page={{ object_list.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </div>
 {% endblock %}
