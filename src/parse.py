@@ -2,7 +2,7 @@ import asyncio
 import json
 import os
 import sys
-
+import datetime
 from django.contrib.auth import get_user_model
 
 proj = os.path.dirname(os.path.abspath('manage.py'))
@@ -14,7 +14,7 @@ import django
 django.setup()
 
 from django.db import DatabaseError
-from scrap.models import City, Language, Vacancy, Url
+from scrap.models import Vacancy, Url
 from scrap import parsers
 
 
@@ -64,7 +64,6 @@ loop = asyncio.get_event_loop()
 tmp_tasks = [(func, data['url'][resource], data['city'], data["language"])
              for data in url_list
              for func, resource in parse_resources]
-# tasks = asyncio.wait([loop.create_task(main(f)) for f in tmp_tasks])
 
 # for data in url_list:
 #     for func, resource in parse_resources:
